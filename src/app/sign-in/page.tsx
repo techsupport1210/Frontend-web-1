@@ -23,10 +23,10 @@ export default function SignIn() {
             href="/"
             className="flex items-center justify-center gap-2 mb-6">
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
-            <span className="text-2xl font-bold text-gray-800">VidFlow</span>
+            <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900">Sign in</h2>
-          <p className="mt-2 text-sm text-gray-600">to continue to VidFlow</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Sign in</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">to continue to VidFlow</p>
         </div>
 
         {/* Sign In Form */}
@@ -76,7 +76,7 @@ export default function SignIn() {
               />
               <label
                 htmlFor="remember-me"
-                className="ml-2 block text-sm text-gray-900">
+                className="ml-2 block text-sm text-gray-900 dark:text-gray-300">
                 Remember me
               </label>
             </div>

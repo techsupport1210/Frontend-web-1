@@ -65,15 +65,15 @@ const VideoCard = ({
           />
         </Link>
         <div className="flex flex-col">
-          <Link href={`/watch/${id}`} className="line-clamp-2 font-medium">
+          <Link href={`/watch/${id}`} className="line-clamp-2 font-medium text-gray-900 dark:text-white">
             {title}
           </Link>
           <Link
             href={`/channel/${channelName}`}
-            className="text-sm text-gray-600 hover:text-gray-900">
+            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
             {channelName}
           </Link>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             {formatViews(views)} • {formatDistanceToNow(uploadedAt, { addSuffix: true })}
           </div>
         </div>

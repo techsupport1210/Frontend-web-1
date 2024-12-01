@@ -24,12 +24,10 @@ export default function ForgotPassword() {
             href="/"
             className="flex items-center justify-center gap-2 mb-6">
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
-            <span className="text-2xl font-bold text-gray-800">VidFlow</span>
+            <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900">
-            Reset your password
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Reset your password</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             {!isSubmitted
               ? "Enter your email address and we'll send you a link to reset your password."
               : "Check your email for a link to reset your password."}
