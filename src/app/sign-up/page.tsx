@@ -27,7 +27,7 @@ export default function SignUp() {
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
             <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Create your account</h2>
+          <h2 className="text-3xl font-bold text-[#EE2B2E]">Create your account</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">to continue to VidFlow</p>
         </div>
 
@@ -102,7 +102,7 @@ export default function SignUp() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#008751] hover:bg-[#006B3F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
               Create Account
             </button>
           </div>
@@ -112,7 +112,7 @@ export default function SignUp() {
               Already have an account?{" "}
               <Link
                 href="/sign-in"
-                className="font-medium text-blue-600 hover:text-blue-500">
+                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
                 Sign in
               </Link>
             </p>
@@ -120,11 +120,15 @@ export default function SignUp() {
 
           <div className="text-xs text-center text-gray-500">
             By signing up, you agree to our{" "}
-            <Link href="/terms" className="text-blue-600 hover:text-blue-500">
+            <Link 
+              href="/terms" 
+              className="text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
               Terms of Service
             </Link>{" "}
             and{" "}
-            <Link href="/privacy" className="text-blue-600 hover:text-blue-500">
+            <Link 
+              href="/privacy" 
+              className="text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
               Privacy Policy
             </Link>
           </div>

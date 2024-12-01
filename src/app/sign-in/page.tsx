@@ -25,7 +25,7 @@ export default function SignIn() {
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
             <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Sign in</h2>
+          <h2 className="text-3xl font-bold text-[#EE2B2E]">Sign in</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">to continue to VidFlow</p>
         </div>
 
@@ -72,7 +72,7 @@ export default function SignIn() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#008751] focus:ring-[#008751] focus:ring-offset-0 border-gray-300 rounded accent-[#008751]"
               />
               <label
                 htmlFor="remember-me"
@@ -84,7 +84,7 @@ export default function SignIn() {
             <div className="text-sm">
               <Link
                 href="/forgot-password"
-                className="font-medium text-blue-600 hover:text-blue-500">
+                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
                 Forgot your password?
               </Link>
             </div>
@@ -93,7 +93,7 @@ export default function SignIn() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#008751] hover:bg-[#006B3F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
               Sign in
             </button>
           </div>
@@ -103,7 +103,7 @@ export default function SignIn() {
               Don't have an account?{" "}
               <Link
                 href="/sign-up"
-                className="font-medium text-blue-600 hover:text-blue-500">
+                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
                 Sign up
               </Link>
             </p>

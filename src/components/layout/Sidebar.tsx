@@ -112,11 +112,11 @@ const Sidebar = ({ isOpen, isMobile }: SidebarProps) => {
     },
     { divider: true },
     {
-      section: "More from YouTube",
+      section: "More from VidFlow",
       items: [
-        { icon: BookmarkIcon, label: "YouTube Premium", href: "/premium" },
-        { icon: MusicalNoteIcon, label: "YouTube Music", href: "/music" },
-        { icon: FilmIcon, label: "YouTube Kids", href: "/kids" },
+        { icon: BookmarkIcon, label: "VidFlow Premium", href: "/premium" },
+        { icon: MusicalNoteIcon, label: "VidFlow Music", href: "/music" },
+        { icon: FilmIcon, label: "VidFlow Kids", href: "/kids" },
       ],
     },
     { divider: true },

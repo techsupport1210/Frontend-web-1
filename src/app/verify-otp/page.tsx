@@ -100,7 +100,7 @@ export default function VerifyOtp() {
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
             <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-bold text-[#EE2B2E]">
             Enter verification code
           </h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -138,7 +138,7 @@ export default function VerifyOtp() {
             <button
               type="submit"
               disabled={isVerifying}
-              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed">
+              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#008751] hover:bg-[#006B3F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed">
               {isVerifying ? "Verifying..." : "Verify Code"}
             </button>
           </div>
@@ -149,7 +149,7 @@ export default function VerifyOtp() {
               <button
                 type="button"
                 onClick={handleResendCode}
-                className="font-medium text-blue-600 hover:text-blue-500">
+                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
                 Resend code
               </button>
             </p>
@@ -160,7 +160,7 @@ export default function VerifyOtp() {
               Remember your password?{" "}
               <Link
                 href="/sign-in"
-                className="font-medium text-blue-600 hover:text-blue-500">
+                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
                 Sign in
               </Link>
             </p>

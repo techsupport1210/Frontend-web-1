@@ -178,7 +178,7 @@ const Header = () => {
                 {/* Sign In Button - Hidden below 455px */}
                 <Link
                   href="/sign-in"
-                  className="hidden min-[455px]:flex items-center gap-2 px-3 py-1.5 text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/50"
+                  className="hidden min-[455px]:flex items-center gap-2 px-3 py-1.5 text-green-600 dark:text-green-400 border border-green-600 dark:border-green-400 rounded-full hover:bg-green-50 dark:hover:bg-green-900/50"
                 >
                   <UserCircleIcon className="h-6 w-6" />
                   <span className="hidden sm:inline">Sign in</span>

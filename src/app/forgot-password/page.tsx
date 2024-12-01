@@ -26,7 +26,7 @@ export default function ForgotPassword() {
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
             <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
           </Link>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Reset your password</h2>
+          <h2 className="text-3xl font-bold text-[#EE2B2E]">Reset your password</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             {!isSubmitted
               ? "Enter your email address and we'll send you a link to reset your password."
@@ -59,7 +59,7 @@ export default function ForgotPassword() {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#008751] hover:bg-[#006B3F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                 Send reset link
               </button>
             </div>
@@ -86,7 +86,7 @@ export default function ForgotPassword() {
             Remember your password?{" "}
             <Link
               href="/sign-in"
-              className="font-medium text-blue-600 hover:text-blue-500">
+              className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
               Sign in
             </Link>
           </p>
@@ -97,7 +97,7 @@ export default function ForgotPassword() {
             Don't have an account?{" "}
             <Link
               href="/sign-up"
-              className="font-medium text-blue-600 hover:text-blue-500">
+              className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
               Sign up
             </Link>
           </p>

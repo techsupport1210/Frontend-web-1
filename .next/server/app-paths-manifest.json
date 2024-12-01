@@ -1,6 +1,6 @@
 {
-  "/sign-up/page": "app/sign-up/page.js",
   "/verify-otp/page": "app/verify-otp/page.js",
+  "/sign-up/page": "app/sign-up/page.js",
   "/reset-password/page": "app/reset-password/page.js",
   "/forgot-password/page": "app/forgot-password/page.js",
   "/sign-in/page": "app/sign-in/page.js"
