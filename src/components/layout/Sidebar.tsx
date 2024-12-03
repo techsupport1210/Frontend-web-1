@@ -74,7 +74,11 @@ const Sidebar = ({ isOpen, isMobile }: SidebarProps) => {
     // Regular menu items
     { icon: HomeIcon, label: "Home", href: "/" } as MenuItem,
     { icon: FireIcon, label: "Trending", href: "/trending" } as MenuItem,
-    { icon: PlayCircleIcon, label: "Subscriptions", href: "/subscriptions" } as MenuItem,
+    {
+      icon: PlayCircleIcon,
+      label: "Subscriptions",
+      href: "/subscriptions",
+    } as MenuItem,
     { divider: true },
     {
       section: "You",
@@ -127,7 +131,7 @@ const Sidebar = ({ isOpen, isMobile }: SidebarProps) => {
   const allItems = menuItems;
 
   const sidebarClasses = `
-    fixed top-14 bottom-0 bg-white dark:bg-gray-900 z-40 overflow-y-auto
+    fixed top-14 bottom-0 bg-white dark:bg-black z-40 overflow-y-auto
     ${isMobile ? "w-64" : "w-60"}
     ${isOpen ? "left-0" : "-left-64"}
     transition-all duration-300
@@ -144,7 +148,7 @@ const Sidebar = ({ isOpen, isMobile }: SidebarProps) => {
     if ("section" in item) {
       return (
         <div key={index} className="mb-3">
-          <h3 className="px-6 py-2 text-base font-medium text-gray-500 dark:text-gray-400">
+          <h3 className="px-6 py-2 text-base font-medium text-gray-500 dark:text-gray-300">
             {item.section}
           </h3>
           {item.items.map((subItem, subIndex) => {
@@ -153,8 +157,8 @@ const Sidebar = ({ isOpen, isMobile }: SidebarProps) => {
               <Link
                 key={`${index}-${subIndex}`}
                 href={subItem.href}
-                className="flex items-center px-6 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-                <Icon className="h-5 w-5 mr-4" />
+                className="flex items-center px-6 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 group">
+                <Icon className="h-5 w-5 mr-4 text-gray-700 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white" />
                 <span>{subItem.label}</span>
               </Link>
             );
@@ -169,8 +173,8 @@ const Sidebar = ({ isOpen, isMobile }: SidebarProps) => {
         <Link
           key={index}
           href={item.href}
-          className="flex items-center px-6 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-          <Icon className="h-5 w-5 mr-4" />
+          className="flex items-center px-6 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 group">
+          <Icon className="h-5 w-5 mr-4 text-gray-700 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white" />
           <span>{item.label}</span>
         </Link>
       );

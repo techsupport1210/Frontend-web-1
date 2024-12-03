@@ -38,8 +38,8 @@ const VideoCard = ({
 
   return (
     <div className="group cursor-pointer">
-      {/* Thumbnail */}
-      <div className="relative aspect-video rounded-xl overflow-hidden mb-3">
+      {/* Thumbnail - Added red border */}
+      <div className="relative aspect-video overflow-hidden mb-6 border-2 border-[#EE2B2E]">
         <Link href={`/watch/${id}`}>
           <Image
             src={thumbnail}
@@ -47,34 +47,39 @@ const VideoCard = ({
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-200"
           />
-          <div className="absolute bottom-1 right-1 bg-black/80 px-1 rounded text-xs text-white">
+          <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded text-sm text-white">
             {duration}
           </div>
         </Link>
       </div>
 
-      {/* Video Info */}
-      <div className="flex gap-3">
+      {/* Video Info - Added red border to diamond */}
+      <div className="flex gap-6">
         <Link href={`/channel/${channelName}`} className="flex-shrink-0">
-          <Image
-            src={channelImage}
-            alt={channelName}
-            width={36}
-            height={36}
-            className="rounded-full"
-          />
+          <div className="rotate-45 overflow-hidden bg-white border-2 border-[#EE2B2E]">
+            <Image
+              src={channelImage}
+              alt={channelName}
+              width={48}
+              height={48}
+              className="-rotate-45 scale-[1.4] rounded-none"
+            />
+          </div>
         </Link>
-        <div className="flex flex-col">
-          <Link href={`/watch/${id}`} className="line-clamp-2 font-medium text-gray-900 dark:text-white">
+        <div className="flex flex-col gap-2">
+          <Link
+            href={`/watch/${id}`}
+            className="line-clamp-2 text-lg font-medium text-gray-900 dark:text-white hover:text-[#008751] dark:hover:text-[#008751]">
             {title}
           </Link>
           <Link
             href={`/channel/${channelName}`}
-            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
+            className="text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
             {channelName}
           </Link>
-          <div className="text-sm text-gray-600 dark:text-gray-400">
-            {formatViews(views)} • {formatDistanceToNow(uploadedAt, { addSuffix: true })}
+          <div className="text-base text-gray-600 dark:text-gray-400">
+            {formatViews(views)} •{" "}
+            {formatDistanceToNow(uploadedAt, { addSuffix: true })}
           </div>
         </div>
       </div>
@@ -82,4 +87,4 @@ const VideoCard = ({
   );
 };
 
-export default VideoCard; 
+export default VideoCard;

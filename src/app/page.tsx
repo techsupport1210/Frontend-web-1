@@ -86,8 +86,8 @@ export default function Home() {
 
   return (
     <div className="max-w-[2000px] mx-auto">
-      {/* Video Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      {/* Video Grid - Changed to 3 columns on desktop and increased gap */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {videos.map((video, index) => (
           <div
             key={video.id}
@@ -100,13 +100,13 @@ export default function Home() {
       {/* Loading indicator */}
       {loading && (
         <div className="flex justify-center p-4">
-          <div className="w-6 h-6 border-2 border-blue-600 rounded-full animate-spin border-t-transparent" />
+          <div className="w-8 h-8 border-4 border-[#008751] rounded-full animate-spin border-t-transparent" />
         </div>
       )}
 
       {/* End of content message */}
       {!hasMore && (
-        <div className="text-center text-gray-600 p-4">
+        <div className="text-center text-gray-600 dark:text-gray-400 p-4">
           No more videos to load
         </div>
       )}
