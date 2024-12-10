@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { VideoCameraIcon } from "@heroicons/react/24/outline";
+import { ROUTES } from '@/config/routes';
+import { validateOTP } from '@/utils/validation';
 
 export default function VerifyOtp() {
   const router = useRouter();
@@ -38,7 +40,10 @@ export default function VerifyOtp() {
   const handlePaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
     const pastedData = e.clipboardData.getData("text").slice(0, 4);
-    if (!/^\d+$/.test(pastedData)) return; // Only allow numbers
+    if (!/^\d+$/.test(pastedData)) {
+      setError("Verification code can only contain numbers");
+      return;
+    }
 
     const digits = pastedData.split("");
     const newOtp = [...otp];
@@ -46,6 +51,7 @@ export default function VerifyOtp() {
       if (index < 4) newOtp[index] = digit;
     });
     setOtp(newOtp);
+    setError("");
 
     // Focus last filled input or next empty input
     const lastIndex = Math.min(digits.length, 4) - 1;
@@ -57,20 +63,20 @@ export default function VerifyOtp() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const otpValue = otp.join("");
     
-    if (otpValue.length !== 4) {
-      setError("Please enter a valid 4-digit code");
+    const validationError = validateOTP(otp);
+    if (validationError) {
+      setError(validationError);
       return;
     }
 
     setIsVerifying(true);
     try {
       // Implement OTP verification logic here
-      console.log("Verifying OTP:", otpValue);
+      console.log("Verifying OTP:", otp.join(""));
       
       // If verification successful, redirect to reset password page
-      router.push("/reset-password");
+      router.push(ROUTES.AUTH.RESET_PASSWORD);
     } catch (err) {
       setError("Invalid verification code. Please try again.");
     } finally {
@@ -80,6 +86,8 @@ export default function VerifyOtp() {
 
   const handleResendCode = () => {
     // Implement resend code logic
+    setOtp(["", "", "", ""]);
+    setError("");
     console.log("Resending verification code");
   };
 
@@ -95,7 +103,7 @@ export default function VerifyOtp() {
         {/* Logo and Title */}
         <div className="text-center">
           <Link
-            href="/"
+            href={ROUTES.HOME}
             className="flex items-center justify-center gap-2 mb-6">
             <VideoCameraIcon className="h-8 w-8 text-red-600" />
             <span className="text-2xl font-bold text-gray-800 dark:text-white">VidFlow</span>
@@ -128,8 +136,11 @@ export default function VerifyOtp() {
                 onChange={(e) => handleOtpChange(index, e.target.value)}
                 onKeyDown={(e) => handleOtpKeyDown(index, e)}
                 onPaste={handlePaste}
-                className="w-14 h-14 text-center text-2xl font-semibold border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className={`w-14 h-14 text-center text-2xl font-semibold border 
+                  ${error ? 'border-red-300' : 'border-gray-300'}
+                  rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
                 aria-label={`Digit ${index + 1}`}
+                disabled={isVerifying}
               />
             ))}
           </div>
@@ -137,7 +148,7 @@ export default function VerifyOtp() {
           <div>
             <button
               type="submit"
-              disabled={isVerifying}
+              disabled={isVerifying || otp.some(digit => !digit) || !!error}
               className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#008751] hover:bg-[#006B3F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed">
               {isVerifying ? "Verifying..." : "Verify Code"}
             </button>
@@ -149,7 +160,8 @@ export default function VerifyOtp() {
               <button
                 type="button"
                 onClick={handleResendCode}
-                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
+                disabled={isVerifying}
+                className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300 disabled:opacity-50 disabled:cursor-not-allowed">
                 Resend code
               </button>
             </p>
@@ -159,7 +171,7 @@ export default function VerifyOtp() {
             <p className="text-sm text-gray-600">
               Remember your password?{" "}
               <Link
-                href="/auth/sign-in"
+                href={ROUTES.AUTH.SIGN_IN}
                 className="font-medium text-green-600 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
                 Sign in
               </Link>

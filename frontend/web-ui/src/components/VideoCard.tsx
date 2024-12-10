@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
+import { ROUTES } from '@/config/routes';
 
 interface VideoCardProps {
   id: string;
@@ -40,7 +41,7 @@ const VideoCard = ({
     <div className="group cursor-pointer">
       {/* Thumbnail - Added red border */}
       <div className="relative aspect-video overflow-hidden mb-6 border-2 border-[#EE2B2E]">
-        <Link href={`/watch/${id}`}>
+        <Link href={ROUTES.VIDEO.WATCH(id)}>
           <Image
             src={thumbnail}
             alt={title}
@@ -55,7 +56,7 @@ const VideoCard = ({
 
       {/* Video Info - Added red border to diamond */}
       <div className="flex gap-6">
-        <Link href={`/channel/${channelName}`} className="flex-shrink-0">
+        <Link href={ROUTES.CHANNEL.VIEW(channelName)} className="flex-shrink-0">
           <div className="rotate-45 overflow-hidden bg-white border-2 border-[#EE2B2E]">
             <Image
               src={channelImage}
@@ -68,12 +69,12 @@ const VideoCard = ({
         </Link>
         <div className="flex flex-col gap-2">
           <Link
-            href={`/watch/${id}`}
+            href={ROUTES.VIDEO.WATCH(id)}
             className="line-clamp-2 text-lg font-medium text-gray-900 dark:text-white hover:text-[#008751] dark:hover:text-[#008751]">
             {title}
           </Link>
           <Link
-            href={`/channel/${channelName}`}
+            href={ROUTES.CHANNEL.VIEW(channelName)}
             className="text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
             {channelName}
           </Link>
