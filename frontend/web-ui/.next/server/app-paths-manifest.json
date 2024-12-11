@@ -1,5 +1,8 @@
 {
-  "/auth/sign-in/page": "app/auth/sign-in/page.js",
-  "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/page": "app/page.js"
+  "/creator/profile/page": "app/creator/profile/page.js",
+  "/auth/content-creator/page": "app/auth/content-creator/page.js",
+  "/auth/content-creator/sign-up/page": "app/auth/content-creator/sign-up/page.js",
+  "/page": "app/page.js",
+  "/auth/sign-up/page": "app/auth/sign-up/page.js",
+  "/auth/change-password/page": "app/auth/change-password/page.js"
 }

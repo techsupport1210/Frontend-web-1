@@ -92,7 +92,6 @@ export default function ContentCreatorSignUp() {
     email: "",
     password: "",
     confirmPassword: "",
-    username: "",
     channelName: "",
     description: "",
     contentCategory: contentCategoryOptions[0],
@@ -107,7 +106,6 @@ export default function ContentCreatorSignUp() {
     email: "",
     password: "",
     confirmPassword: "",
-    username: "",
     channelName: "",
     description: "",
     contentCategory: "",
@@ -249,9 +247,6 @@ export default function ContentCreatorSignUp() {
           formData.confirmPassword
         );
         break;
-      case "username":
-        error = validateUsername(formData.username);
-        break;
       case "channelName":
         error = validateChannelName(formData.channelName);
         break;
@@ -324,7 +319,6 @@ export default function ContentCreatorSignUp() {
         formData.password,
         formData.confirmPassword
       ),
-      username: validateUsername(formData.username),
       channelName: validateChannelName(formData.channelName),
       description: validateDescription(formData.description),
       contentCategory: validateContentCategory(formData.contentCategory),
@@ -498,30 +492,6 @@ export default function ContentCreatorSignUp() {
             </h3>
 
             <div className="space-y-4">
-              <div>
-                <label
-                  htmlFor="username"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Username
-                </label>
-                <input
-                  id="username"
-                  name="username"
-                  type="text"
-                  autoComplete="username"
-                  value={formData.username}
-                  onChange={handleChange}
-                  onBlur={() => handleBlur("username")}
-                  className={`appearance-none block w-full px-3 py-2 border ${
-                    errors.username ? "border-red-300" : "border-gray-300"
-                  } rounded-lg placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
-                  placeholder="Choose a username"
-                />
-                {errors.username && (
-                  <p className="mt-1 text-sm text-red-600">{errors.username}</p>
-                )}
-              </div>
-
               <div>
                 <label
                   htmlFor="handle"

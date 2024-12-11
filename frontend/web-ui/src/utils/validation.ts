@@ -64,4 +64,76 @@ export const validateOTP = (otp: string[]) => {
     return "Verification code can only contain numbers";
   }
   return "";
+};
+
+export const validateChannelName = (name: string) => {
+  if (!name.trim()) {
+    return "Channel name is required";
+  }
+  if (name.length < 3) {
+    return "Channel name must be at least 3 characters long";
+  }
+  return "";
+};
+
+export const validateContentCategory = (category: string) => {
+  if (!category) {
+    return "Please select a content category";
+  }
+  return "";
+};
+
+export const validateWebsiteUrl = (url: string) => {
+  if (!url) return ""; // Website URL is optional
+  try {
+    new URL(url);
+    return "";
+  } catch {
+    return "Please enter a valid URL";
+  }
+};
+
+export const validateSocialLinks = (links: string[]) => {
+  const errors: string[] = [];
+  
+  for (const url of links) {
+    if (url) {
+      try {
+        new URL(url);
+        errors.push("");
+      } catch {
+        errors.push("Please enter a valid URL");
+      }
+    } else {
+      errors.push("");
+    }
+  }
+  
+  return errors;
+};
+
+export const validateChannelImage = (file: File | null) => {
+  if (!file) {
+    return "Channel image is required";
+  }
+  if (file.size > 2 * 1024 * 1024) {
+    return "Image must be less than 2MB";
+  }
+  if (!file.type.startsWith("image/")) {
+    return "File must be an image";
+  }
+  return "";
+};
+
+export const validateDescription = (description: string) => {
+  if (!description.trim()) {
+    return "Channel description is required";
+  }
+  if (description.length < 50) {
+    return "Description must be at least 50 characters long";
+  }
+  if (description.length > 5000) {
+    return "Description must not exceed 5000 characters";
+  }
+  return "";
 }; 

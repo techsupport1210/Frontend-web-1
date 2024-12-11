@@ -16,10 +16,14 @@ export const ROUTES = {
     SIGN_UP: '/auth/sign-up',
     FORGOT_PASSWORD: '/auth/forgot-password',
     RESET_PASSWORD: '/auth/reset-password',
+    CHANGE_PASSWORD: '/auth/change-password',
     CONTENT_CREATOR: {
       APPLY: '/auth/content-creator',
       SIGN_UP: '/auth/content-creator/sign-up'
     },
+  },
+  CREATOR: {
+    PROFILE: '/creator/profile',
   },
   PROFILE: {
     VIEW: '/profile',
